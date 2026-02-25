@@ -48,3 +48,9 @@ Reset state before running tests:
 ```http
 POST /reset
 ```
+
+## Automated Test Suite Results
+
+<img width="1028" height="1524" alt="automated-test-suite-results" src="https://github.com/user-attachments/assets/ac7521ca-67fe-4d3d-872b-addc0c3abecd" />
+
+

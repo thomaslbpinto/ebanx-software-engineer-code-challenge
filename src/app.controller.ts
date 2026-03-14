@@ -1,15 +1,14 @@
-import { Body, Controller, Get, Post, Query, Res, HttpCode } from '@nestjs/common';
+import { Body, Controller, Get, Post, Query, Res } from '@nestjs/common';
 import { type Response } from 'express';
-import { AccountNotFoundError, InsufficientFundsError, InvalidEventError } from './account.errors';
-import { type EventInput } from './account.types';
-import { AccountService } from './account.service';
+import { AccountNotFoundError, InsufficientFundsError, InvalidEventError } from './account/account.errors';
+import { type EventInput } from './account/account.types';
+import { AccountService } from './account/account.service';
 
 @Controller()
 export class AppController {
   constructor(private readonly accountService: AccountService) {}
 
   @Post('reset')
-  @HttpCode(200)
   reset(@Res() response: Response): void {
     this.accountService.reset();
     response.status(200).send('OK');
